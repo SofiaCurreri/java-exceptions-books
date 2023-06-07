@@ -10,10 +10,26 @@ public class Book {
     //CONSTRUCTOR
 
     public Book(String title, int numPages, String author, String editor) {
+        if (title.isBlank()) {
+            throw new IllegalArgumentException("Va inserito un titolo!");
+        }
         this.title = title;
+
+        if (numPages <= 0) {
+            throw new IllegalArgumentException("Il numero di pagine non può essere negativo!");
+        }
         this.numPages = numPages;
+
+        if (author.isBlank()) {
+            throw new IllegalArgumentException("Va inserito un autore!");
+        }
         this.author = author;
+
+        if (editor.isBlank()) {
+            throw new IllegalArgumentException("Va inserita una casa editrice!");
+        }
         this.editor = editor;
+
     }
 
     //GETTER

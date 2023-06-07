@@ -23,7 +23,13 @@ public class Catalog {
 
             System.out.println("Inserisci la casa editrice del libro");
             String editor = book.nextLine();
-            catalog[i] = new Book(title, numPages, author, editor);
+
+            try {
+                catalog[i] = new Book(title, numPages, author, editor);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Errore: " + e.getMessage());
+                i--;
+            }
         }
 
         for (Book bookEl : catalog) {
