@@ -49,4 +49,11 @@ public class Book {
     public void setEditor(String editor) {
         this.editor = editor;
     }
+
+    public String toString(){
+        return "Titolo: " + title +
+                "\nNumero pagine: " + numPages +
+                "\nAutore: " + author +
+                "\nCasa editrice: " + editor;
+    }
 }
