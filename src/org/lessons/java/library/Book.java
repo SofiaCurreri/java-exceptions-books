@@ -51,20 +51,33 @@ public class Book {
 
     //SETTER
     public void setTitle(String title) {
+        if (title.isBlank()) {
+            throw new IllegalArgumentException("Va inserito un titolo!");
+        }
         this.title = title;
     }
 
     public void setNumPages(int numPages) {
+        if (numPages <= 0) {
+            throw new IllegalArgumentException("Il numero di pagine non può essere negativo!");
+        }
         this.numPages = numPages;
     }
 
     public void setAuthor(String author) {
+        if (author.isBlank()) {
+            throw new IllegalArgumentException("Va inserito un autore!");
+        }
         this.author = author;
     }
 
     public void setEditor(String editor) {
+        if (editor.isBlank()) {
+            throw new IllegalArgumentException("Va inserita una casa editrice!");
+        }
         this.editor = editor;
     }
+
 
     public String toString(){
         return "Titolo: " + title +
